@@ -6,7 +6,7 @@ export default function ContactPage() {
     <>
       <SubHero
         title="오시는 길"
-        desc="고덕본 아동발달센터 찾아오시는 방법"
+        desc="고덕본아동발달센터 찾아오시는 방법"
         heroKey="contactHero"
       />
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
 
             <div className={styles.row}>
               <div className={styles.key}>오시는 길</div>
-              <div className={styles.value}>경기도 평택시 고덕국제7로 117 1동 208호</div>
+              <div className={styles.value}>경기도 평택시 고덕국제7로 117 명문프라자 2층 1동 208호</div>
             </div>
 
             <div className={styles.row}>

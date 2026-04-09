@@ -74,7 +74,6 @@ export default function ColumnPage() {
                 <h4>대외 활동 및 교사 연수</h4>
                 <ul className={styles.resumeList}>
                   <li>충북 단재교육연수원 초등교사 대상 전문 연수 강사</li>
-                  <li>인천시 교육청 관내 12개교 학교폭력 예방 연극치료 프로젝트 진행</li>
                   <li>용인문화재단 시민예술학교 교육 및 예술치료 프로그램 전담</li>
                   <li>국립어린이청소년도서관 독서 문화 체험 프로그램 전문 강사</li>
                   <li>용인 공생광장 문화예술교육 프로그램 운영</li>

@@ -111,7 +111,7 @@ export default function ProgramPage() {
               아이의 현재 상태를 보고 필요한 평가와 치료를 안내합니다.
             </h2>
             <p className={styles.sectionText}>
-              고덕본 아동발달센터는 정서, 언어, 인지, 사회성을 함께 살펴본 뒤
+              고덕본아동발달센터는 정서, 언어, 인지, 사회성을 함께 살펴본 뒤
               아이에게 지금 가장 필요한 방향을 제안합니다.
             </p>
           </div>
