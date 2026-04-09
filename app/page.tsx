@@ -41,7 +41,7 @@ export default async function Page() {
         ))}
         <div className="hero-text">
           <h1>아이의 눈높이에서<br />세상을 바라보는 공간</h1>
-          <p>고덕본 아동발달센터</p>
+          <p>고덕본아동발달센터</p>
         </div>
       </section>
 

@@ -17,7 +17,7 @@ export default function AboutPage() {
             <h2 className={styles.title}>가장 좋은 치료는<br/>아이의 마음을 읽어주는 것에서 시작합니다.</h2>
             <div className={styles.desc}>
               <p>
-                안녕하세요. 고덕본 아동발달센터입니다.<br/><br/>
+                안녕하세요. 고덕본아동발달센터입니다.<br/><br/>
                 아이들은 저마다 다른 속도와 방식으로 세상을 배우고 성장합니다. 
                 때로는 그 과정에서 작은 어려움을 마주하기도 하지만, 
                 적절한 시기에 따뜻한 지지와 전문적인 도움을 받는다면 
@@ -30,7 +30,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className={styles.introImageBox}>
-            <img src="/center4.jpeg" alt="고덕본 아동발달센터 내부" />
+            <img src="/center4.jpeg" alt="고덕본아동발달센터 내부" />
           </div>
         </section>
 

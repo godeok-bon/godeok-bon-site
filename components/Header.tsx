@@ -19,7 +19,7 @@ export default function Header() {
   return (
     // 메인 페이지일 땐 main-header 나머진 sub-header 클래스 부여
     <header className={isMain ? "main-header" : "sub-header"}>
-      <Link href="/" className="logo">고덕본 아동발달센터</Link>
+      <Link href="/" className="logo">고덕본아동발달센터</Link>
 
       <button className={`hamburger ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu}>
         <span></span><span></span><span></span>
