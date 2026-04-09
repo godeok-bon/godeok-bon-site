@@ -1,44 +1,120 @@
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
+import { unstable_noStore as noStore } from "next/cache";
+import ConfirmSubmitButton from "@/components/ConfirmSubmitButton";
+import { deleteHomeFeedItemAction } from "@/app/home-feed/actions";
+import {
+  getHomeFeedItemsByCategory,
+  getHomeFeedReadTime,
+  formatHomeFeedDate,
+} from "@/lib/home-feed";
+import { isNoticeAdminAuthenticated } from "@/lib/notice-admin";
+import { getSiteMediaSettings } from "@/lib/site-media";
+import styles from "./page.module.css";
 
-export default function Home() {
+export default async function Page() {
+  noStore();
+
+  const [feedItems, authenticated] = await Promise.all([
+    getHomeFeedItemsByCategory(),
+    isNoticeAdminAuthenticated(),
+  ]);
+  const siteMediaSettings = await getSiteMediaSettings();
+  const mainSlides = [
+    siteMediaSettings.mainSlide1,
+    siteMediaSettings.mainSlide2,
+    siteMediaSettings.mainSlide3,
+  ];
+
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-[#FFFFFF] px-6 text-[#1D1D1F]">
-      
-      {/* 로고 영역 */}
-      <div className="relative w-40 h-28 mb-16">
-        <Image 
-          src="/logo.png" 
-          alt="고덕 본 아동발달센터" 
-          fill 
-          className="object-contain" 
-          priority 
-        />
-      </div>
+    <>
+      <section
+        className="hero-slider"
+        style={{ backgroundImage: `url("${mainSlides[0]}")` }}
+      >
+        {mainSlides.map((imageUrl, index) => (
+          <div
+            key={`${imageUrl}-${index}`}
+            className="slide"
+            style={{ backgroundImage: `url("${imageUrl}")` }}
+          />
+        ))}
+        <div className="hero-text">
+          <h1>아이의 눈높이에서<br />세상을 바라보는 공간</h1>
+          <p>고덕본 아동발달센터</p>
+        </div>
+      </section>
 
-      {/* 텍스트 영역: 더 굵고 확실한 존재감으로 수정 */}
-      <div className="text-center space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#1D1D1F] tracking-tight">
-          고덕 본 아동발달센터
-        </h1>
-        <p className="text-lg md:text-xl font-semibold text-[#636E72] tracking-wide">
-          아이의 성장을 위한 소중한 준비 중입니다.
-        </p>
-      </div>
+      <section className={styles.feedSection}>
+        <div className={styles.feedGrid}>
+          {authenticated ? (
+            <Link
+              href="/home-feed/write"
+              className={`${styles.feedCard} ${styles.addCard}`}
+            >
+              <div className={styles.feedImageWrap}>
+                <div className={styles.addCardInner}>
+                  <span className={styles.addMark}>+</span>
+                </div>
+              </div>
+              <div className={styles.feedCardBody}>
+                <strong className={styles.feedTitle}>새 피드 등록</strong>
+                <span className={styles.feedMeta}>메인 피드를 추가합니다</span>
+              </div>
+            </Link>
+          ) : null}
 
-      {/* 연락처 영역: 연락처도 같이 굵게 변경 */}
-      <div className="mt-16">
-        <a 
-          href="tel:031-000-0000" 
-          className="text-xl font-bold border-b-2 border-[#1D1D1F] pb-1 hover:text-[#8C232E] hover:border-[#8C232E] transition-all"
-        >
-          031.667.2001
-        </a>
-      </div>
+          {feedItems.map((item, index) => (
+            <article key={item.id} className={styles.feedCard}>
+              <Link href={`/feed/${item.id}`} className={styles.feedLink}>
+                <div className={styles.feedImageWrap}>
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.title || `고덕본아동발달센터 메인 카드 ${index + 1}`}
+                    fill
+                    priority={index === 0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className={styles.feedImage}
+                  />
+                </div>
 
-      {/* 하단 푸터 */}
-      <footer className="fixed bottom-12 text-[10px] text-[#A6A6A6] tracking-[0.3em] uppercase">
-        Coming Soon
-      </footer>
-    </main>
+                <div className={styles.feedCardBody}>
+                  <strong className={styles.feedTitle}>{item.title}</strong>
+                  <span className={styles.feedMeta}>
+                    {formatHomeFeedDate(item.createdAt)} ·{" "}
+                    {getHomeFeedReadTime(item.content)} min
+                  </span>
+                </div>
+              </Link>
+
+              {authenticated ? (
+                <div className={styles.adminTools}>
+                  <Link
+                    href={`/home-feed/${item.id}/edit`}
+                    className={styles.adminTool}
+                  >
+                    수정
+                  </Link>
+
+                  <form
+                    action={deleteHomeFeedItemAction}
+                    className={styles.deleteForm}
+                  >
+                    <input type="hidden" name="id" value={item.id} />
+                    <ConfirmSubmitButton className={styles.adminTool}>
+                      삭제
+                    </ConfirmSubmitButton>
+                  </form>
+                </div>
+              ) : null}
+            </article>
+          ))}
+        </div>
+
+        {feedItems.length === 0 && !authenticated ? (
+          <div className={styles.emptyState}>등록된 피드가 없습니다.</div>
+        ) : null}
+      </section>
+    </>
   );
 }

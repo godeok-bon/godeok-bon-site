@@ -1,0 +1,151 @@
+.pageWrap {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 5vw;
+}
+
+.panel {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 28px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111111;
+  margin-bottom: 10px;
+  letter-spacing: -0.03em;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666666;
+}
+
+.messageBox {
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  border: 1px solid #ead8d1;
+  border-radius: 10px;
+  background-color: #fbf6f3;
+  color: #754330;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.formGrid {
+  display: grid;
+  gap: 18px;
+}
+
+.fieldGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.textInput,
+.selectInput {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 0 14px;
+  font-size: 15px;
+  color: #111111;
+}
+
+.textInput:focus,
+.selectInput:focus {
+  outline: none;
+  border-color: #111111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06);
+}
+
+.inlineFields {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) 1fr;
+  gap: 16px;
+  align-items: end;
+}
+
+.checkboxField {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  font-size: 15px;
+  color: #333333;
+}
+
+.checkboxField input {
+  width: 16px;
+  height: 16px;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #d4d4d4;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.primaryButton {
+  background-color: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+.secondaryButton:hover {
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 80px 20px;
+  }
+
+  .panel {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .inlineFields {
+    grid-template-columns: 1fr;
+  }
+}

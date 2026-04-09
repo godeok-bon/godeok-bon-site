@@ -1,0 +1,176 @@
+.programPage {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 88px 5vw;
+  border-bottom: 1px solid #ece7df;
+}
+
+.introSection {
+  border-bottom: 1px solid #ece7df;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  color: #111111;
+}
+
+.sectionText {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #555555;
+}
+
+.introCopy {
+  max-width: 820px;
+}
+
+.stepGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.stepItem {
+  border-top: 2px solid #111111;
+  padding-top: 16px;
+}
+
+.stepNumber {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #8b8b8b;
+  margin-bottom: 10px;
+}
+
+.stepTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.stepText {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #555555;
+}
+
+.programTable {
+  border-top: 2px solid #111111;
+}
+
+.programRow {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid #ece7df;
+}
+
+.programSummary {
+  display: grid;
+  gap: 12px;
+}
+
+.programName {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #111111;
+}
+
+.programText {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555555;
+}
+
+.programContent {
+  display: grid;
+  gap: 18px;
+}
+
+.programLine {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #f0ebe4;
+}
+
+.programLine:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.programLine h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #7a6a58;
+}
+
+.detailList {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+}
+
+.detailList li {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #555555;
+}
+
+@media (max-width: 1024px) {
+  .programRow {
+    grid-template-columns: 1fr;
+  }
+
+  .stepGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .programName {
+    font-size: 22px;
+  }
+
+  .stepGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .programLine {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
