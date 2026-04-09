@@ -1,0 +1,35 @@
+.editorWrap {
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.editorWrap :global(.toastui-editor-defaultUI) {
+  border: 0;
+  font-family: "Pretendard", sans-serif;
+}
+
+.editorWrap :global(.toastui-editor-toolbar) {
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #f8f8f8;
+}
+
+.editorWrap :global(.toastui-editor-toolbar-icons) {
+  border-radius: 6px;
+}
+
+.editorWrap :global(.toastui-editor-toolbar-icons:hover) {
+  background-color: #ececec;
+}
+
+.editorWrap :global(.toastui-editor-contents) {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+.editorWrap :global(.toastui-editor-contents img) {
+  max-width: 100%;
+  height: auto;
+}

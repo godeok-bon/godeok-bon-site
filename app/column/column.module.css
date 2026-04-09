@@ -1,0 +1,163 @@
+.directorContainer {
+  padding: 120px 5vw;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.directorHero {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  margin-bottom: 120px;
+}
+
+.directorPhoto {
+  flex-shrink: 0;
+  width: 360px;
+  height: 480px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border: 1px solid #ece7df;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #faf8f4 0%, #f1ece4 100%);
+  color: #9b9288;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.directorIntro {
+  flex: 1;
+}
+
+.dLabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #a0a0a0;
+  margin-bottom: 16px;
+}
+
+.dName {
+  font-size: 42px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.dSlogan {
+  font-size: 20px;
+  font-weight: 400;
+  color: #666666;
+  margin-bottom: 40px;
+}
+
+.dPhilosophy {
+  border-top: 1px solid #111111;
+  padding-top: 30px;
+}
+
+.pHighlight {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  word-break: keep-all;
+}
+
+.pDesc p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555555;
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+
+.resumeSection { 
+    display: flex; 
+    flex-direction: column;
+     gap: 80px; 
+}
+
+.resumeGrid { 
+    display: grid; 
+    grid-template-columns: 
+    1fr 1fr; gap: 60px; 
+}
+
+.resumeTitle {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #111111;
+  border-bottom: 1px solid #111111;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.resumeList { 
+    list-style: none; 
+    padding: 0; 
+}
+
+.resumeList li {
+  font-size: 17px;
+  color: #444444;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  position: relative;
+}
+
+.resumeList li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.resumeList li span { 
+    color: #888; 
+    font-size: 15px;
+ }
+
+.careerGrid { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.careerSub h4 { 
+    font-size: 18px; 
+    font-weight: 700; color: #111111; margin-bottom: 16px; 
+}
+
+@media (max-width: 992px) {
+  .directorHero { 
+    flex-direction: column;
+    gap: 50px; 
+  }
+
+  .directorPhoto {
+     width: 100%;
+      max-width: 400px; 
+      height: 450px; 
+      margin: 0 auto; 
+  }
+
+  .resumeGrid, .careerGrid { 
+    grid-template-columns: 1fr;
+    gap: 40px; 
+  }
+}

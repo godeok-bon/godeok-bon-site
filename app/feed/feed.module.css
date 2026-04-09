@@ -1,0 +1,255 @@
+.pageWrap {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 44px 28px 120px;
+}
+
+.adminBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.adminAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid #e6dfd5;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.adminAction:hover {
+  background-color: #faf8f4;
+}
+
+.article {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 8px 0 54px;
+  text-align: center;
+}
+
+.postTitle {
+  color: #18181b;
+  font-size: clamp(40px, 5.8vw, 72px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+  word-break: keep-all;
+}
+
+.metaRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 34px;
+  color: #98a2b3;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: #cbd5e1;
+}
+
+.imageSection {
+  max-width: 780px;
+  margin: 0 auto 54px;
+}
+
+.imageWrap {
+  overflow: hidden;
+  border-radius: 34px;
+  background-color: #f5f6f8;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contentSection {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.contentParagraph {
+  color: #475467;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.85;
+  letter-spacing: -0.03em;
+}
+
+.contentParagraph + .contentParagraph {
+  margin-top: 40px;
+}
+
+.contentHtml {
+  color: #475467;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.85;
+  letter-spacing: -0.03em;
+}
+
+.contentHtml :global(p) + :global(p) {
+  margin-top: 40px;
+}
+
+.contentHtml :global(img) {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 24px auto;
+  border-radius: 20px;
+}
+
+.contentHtml :global(h1),
+.contentHtml :global(h2),
+.contentHtml :global(h3) {
+  margin: 28px 0 14px;
+  color: #18181b;
+  font-size: 30px;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+
+.contentHtml :global(ul),
+.contentHtml :global(ol) {
+  padding-left: 24px;
+  margin: 18px 0;
+}
+
+.contentHtml :global(li) + :global(li) {
+  margin-top: 8px;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 860px;
+  margin: 52px auto 0;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background-color: #f3f4f6;
+  color: #667085;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nextRow {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 860px;
+  margin: 84px auto 0;
+  padding-top: 34px;
+  border-top: 1px solid #eceff3;
+}
+
+.nextLink {
+  color: #0f5fde;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.nextLink:hover {
+  color: #0a4bb8;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 28px 18px 84px;
+  }
+
+  .adminBar {
+    margin-bottom: 20px;
+  }
+
+  .header {
+    padding-bottom: 36px;
+  }
+
+  .postTitle {
+    font-size: clamp(34px, 11vw, 50px);
+  }
+
+  .metaRow {
+    gap: 12px;
+    margin-top: 22px;
+    font-size: 15px;
+  }
+
+  .imageSection {
+    margin-bottom: 38px;
+  }
+
+  .imageWrap {
+    border-radius: 26px;
+  }
+
+  .contentParagraph {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .contentHtml {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .contentParagraph + .contentParagraph {
+    margin-top: 28px;
+  }
+
+  .contentHtml :global(p) + :global(p) {
+    margin-top: 28px;
+  }
+
+  .contentHtml :global(h1),
+  .contentHtml :global(h2),
+  .contentHtml :global(h3) {
+    font-size: 24px;
+  }
+
+  .tagList {
+    margin-top: 36px;
+  }
+
+  .nextRow {
+    margin-top: 58px;
+    padding-top: 24px;
+  }
+
+  .nextLink {
+    font-size: 15px;
+  }
+}

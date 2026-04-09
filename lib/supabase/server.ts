@@ -1,0 +1,26 @@
+import "server-only";
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
+import { getSupabasePublicEnv } from "@/lib/supabase/env";
+
+export async function getSupabaseServerClient() {
+  const cookieStore = await cookies();
+  const { url, anonKey } = getSupabasePublicEnv();
+
+  return createServerClient(url, anonKey, {
+    cookies: {
+      getAll() {
+        return cookieStore.getAll();
+      },
+      setAll(cookiesToSet) {
+        try {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            cookieStore.set(name, value, options);
+          });
+        } catch {
+          // Server Components에서는 cookie set이 불가할 수 있어 무시합니다.
+        }
+      },
+    },
+  });
+}
